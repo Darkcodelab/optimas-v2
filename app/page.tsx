@@ -1,16 +1,12 @@
-import Link from "next/link";
+import AskOptimas from "@/components/ask-optimas";
 
 export default function Page() {
   return (
-    <main>
-      <div className="container mx-auto py-12 flex justify-center items-center gap-8">
-        <Link href="/google" className="p-4 border rounded-sm">
-          Google Chatbot
-        </Link>
-        <Link href="/open-ai" className="p-4 border rounded-sm">
-          OpenAI Chatbot
-        </Link>
-      </div>
+    <main className="h-[200vh] bg-gray-100">
+      <h1 className="text-5xl py-12 text-center text-primary">
+        OPTIBOT Testing
+      </h1>
+      <AskOptimas />
     </main>
   );
 }
