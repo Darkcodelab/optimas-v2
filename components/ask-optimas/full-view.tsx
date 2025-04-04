@@ -15,10 +15,6 @@ type Props = {
   setLoading: Dispatch<SetStateAction<boolean>>;
 };
 
-const ChatItem = ({ item }: { item: IChatItem }) => {
-  return <li>{item.message}</li>;
-};
-
 export default function FullView({
   setViewState,
   chatList,

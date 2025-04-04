@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { Dispatch, SetStateAction, useRef } from "react";
+import { Dispatch, SetStateAction } from "react";
 import { motion } from "motion/react";
 
 type Props = {
@@ -26,7 +26,7 @@ export default function LandingBanner({ setShowLandingBanner }: Props) {
 
         <div className="text-center grow text-white mt-10 lg:mt-10">
           <h5 className="text-5xl font-semibold leading-normal">
-            Hey There! I'm{" "}
+            Hey There! I&apos;m{" "}
             <span className="text-secondary-yellow">
               OPTIMAS
               <sup className="text-xs relative top-[-35px]">&reg;</sup>
