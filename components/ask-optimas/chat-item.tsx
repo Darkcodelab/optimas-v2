@@ -6,12 +6,12 @@ import ReactMarkdown from "react-markdown";
 export function UserChatItem({ item }: { item: IChatItem }) {
   return (
     <motion.li
-      className="text-right flex flex-col self-end"
+      className="text-right flex flex-col self-end justify-end items-end"
       initial={{ y: 50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.3 }}
     >
-      <div className="max-w-[300px] bg-[#ffbf47] p-2 rounded-sm text-left text-sm">
+      <div className="max-w-[600px] bg-[#ffbf47] px-3 py-2 rounded-sm text-left text-sm text-gray-800">
         {item.message}
       </div>
       <div className="text-gray-500 text-xs p-1">
@@ -29,7 +29,7 @@ export function SystemChatItem({ item }: { item: IChatItem }) {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.3 }}
     >
-      <div className="p-2 w-[30px] h-[30px] flex justify-center items-center bg-[#11174a] rounded-full">
+      <div className="p-2 w-[30px] h-[30px] flex justify-center items-center bg-white rounded-full">
         <Image src="/optimas-chat-logo.png" width={20} height={24} alt="" />
       </div>
       <div className="grow w-[90%]">
@@ -52,7 +52,7 @@ export function LoadingChatItem() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.3 }}
     >
-      <div className="p-2 w-[30px] h-[30px] flex justify-center items-center bg-[#11174a] rounded-full">
+      <div className="p-2 w-[30px] h-[30px] flex justify-center items-center bg-white rounded-full">
         <Image src="/optimas-chat-logo.png" width={20} height={24} alt="" />
       </div>
       <div className="w-full">

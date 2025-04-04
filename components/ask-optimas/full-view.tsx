@@ -1,10 +1,11 @@
 import { motion } from "motion/react";
 import animations from "./motion-animations";
-import { CircleX, Minimize2, SendHorizonal } from "lucide-react";
+import { CircleX, Minimize2 } from "lucide-react";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { IChatItem, IViewState } from "./types";
 import { LoadingChatItem, SystemChatItem, UserChatItem } from "./chat-item";
 import { getChatResponseFromOpenAI } from "@/actions";
+import Image from "next/image";
 
 type Props = {
   setViewState: Dispatch<SetStateAction<IViewState>>;
@@ -89,7 +90,7 @@ export default function FullView({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
-      <div className="fixed bottom-0 left-[50%] translate-x-[-50%] h-[90vh] max-w-[1200px] w-full  faded-gradient rounded-t-lg flex flex-col justify-between">
+      <div className="fixed bottom-0 left-[50%] translate-x-[-50%] h-[90vh] max-w-[1200px] w-full rounded-t-lg flex flex-col justify-between z-50 bg-primary">
         {/* HEADER */}
         <div className="p-3 flex justify-between items-center bg-white border-b border-gray-300 rounded-t-lg">
           <h4 className="text-lg">OPTIBOT</h4>
@@ -109,11 +110,14 @@ export default function FullView({
           </div>
         </div>
 
-        <div className="grow overflow-y-auto h-full mb-2" ref={chatListRef}>
-          <h2 className="text-3xl text-center py-6 font-semibold text-primary">
+        <div
+          className="grow overflow-y-auto h-full mb-2 bg-primary text-white"
+          ref={chatListRef}
+        >
+          <h2 className="text-3xl text-center py-6 font-semibold">
             How can <span className="text-secondary-yellow">OPTIBOT</span> help?
           </h2>
-          <ul className="max-w-[700px] mx-auto mt-4 flex flex-col gap-6 text-gray-600">
+          <ul className="max-w-[700px] mx-auto mt-4 flex flex-col gap-6">
             {chatList.map((item) => {
               if (item.role === "system") {
                 return <SystemChatItem item={item} key={item.id} />;
@@ -127,9 +131,9 @@ export default function FullView({
         </div>
 
         {/* INPUT */}
-        <div className="p-4 bg-white shadow-lg max-w-[700px] w-full mx-auto rounded-t-lg">
+        <div className="p-4 bg-white shadow-lg max-w-[700px] w-full mx-auto rounded-t-xl">
           <form
-            className="border border-gray-500 p-3 flex gap-2 rounded-lg"
+            className="border rounded-full border-gray-500 p-3 px-4 flex gap-2"
             onSubmit={handleFormSubmit}
           >
             <input
@@ -141,7 +145,12 @@ export default function FullView({
               onChange={(e) => setQuery(e.target.value)}
             />
             <button type="submit" className="cursor-pointer">
-              <SendHorizonal className="text-gray-500" />
+              <Image
+                src="/images/chatbot/send-fill.png"
+                alt="send"
+                width={25}
+                height={25}
+              />
             </button>
           </form>
         </div>
