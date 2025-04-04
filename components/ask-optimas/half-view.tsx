@@ -74,7 +74,7 @@ export default function HalfView({
 
   return (
     <motion.div
-      className="fixed bottom-0 right-5 h-[70vh] max-w-[400px] w-full rounded-t-lg flex flex-col justify-between z-50 bg-primary"
+      className="fixed bottom-0 right-0 lg:right-5 h-[70vh] max-w-[400px] w-full rounded-t-lg flex flex-col justify-between z-50 bg-primary"
       {...animations.fadeUp}
     >
       {/* HEADER */}
@@ -100,7 +100,7 @@ export default function HalfView({
         className="grow overflow-y-auto h-full mb-2 px-3 text-white"
         ref={chatListRef}
       >
-        <h2 className="text-sm text-center py-4 font-semibold text-primary">
+        <h2 className="text-xs lg:text-sm text-center py-4 font-semibold text-primary">
           How can <span className="text-secondary-yellow">OPTIBOT</span> help?
         </h2>
         <ul className="max-w-[700px] mx-auto mt-4 flex flex-col gap-6">

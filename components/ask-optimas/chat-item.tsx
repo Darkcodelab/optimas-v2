@@ -57,11 +57,11 @@ export function LoadingChatItem() {
       </div>
       <div className="w-full">
         <div className="flex flex-col gap-1 animate-pulse space-x-4">
-          <div className="max-w-[580px] w-full h-2.5 bg-[#11174a63] rounded-full"></div>
-          <div className="max-w-[550px] w-full h-2.5 bg-[#11174a63] rounded-full"></div>
-          <div className="max-w-[505px] w-full h-2.5 bg-[#11174a63] rounded-full"></div>
-          <div className="max-w-[530px] w-full h-2.5 bg-[#11174a63] rounded-full"></div>
-          <div className="max-w-[520px] w-full h-2.5 bg-[#11174a63] rounded-full"></div>
+          <div className="max-w-[580px] w-full h-2.5 bg-[#b9bde663] rounded-full"></div>
+          <div className="max-w-[550px] w-full h-2.5 bg-[#b9bde663] rounded-full"></div>
+          <div className="max-w-[505px] w-full h-2.5 bg-[#b9bde663] rounded-full"></div>
+          <div className="max-w-[530px] w-full h-2.5 bg-[#b9bde663] rounded-full"></div>
+          <div className="max-w-[520px] w-full h-2.5 bg-[#b9bde663] rounded-full"></div>
         </div>
       </div>
     </motion.li>

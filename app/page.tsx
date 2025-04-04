@@ -3,8 +3,9 @@
 import AskOptimas from "@/components/ask-optimas";
 import LandingBanner from "@/components/home/landing-banner";
 import BlogPost from "@/components/shared/blog-post";
+import Footer from "@/components/shared/footer";
 import SectionTitle from "@/components/shared/SectionTitle";
-import { CirclePlay } from "lucide-react";
+import { ChevronRight, CirclePlay } from "lucide-react";
 import { AnimatePresence } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -22,9 +23,20 @@ export default function Page() {
         />
       ) : (
         <main key="home">
-          <section className="bg-primary text-white pt-10 px-2 border-b-8 border-secondary-yellow lg:pt-20">
+          <section className=" text-white pt-20 px-2 border-b-8 border-secondary-yellow lg:pt-36 relative">
+            <div className="absolute top-0 left-0 w-full h-full -z-10">
+              <video
+                autoPlay
+                muted
+                loop
+                className="absolute top-0 left-0 w-full h-full object-cover"
+              >
+                <source src="images/home/hero-banner.mp4" type="video/mp4" />
+              </video>
+              <div className="absolute top-0 left-0 w-full h-full bg-[#11174a] opacity-50 pointer-events-none"></div>
+            </div>
             <div className="flex flex-col items-center container mx-auto justify-between gap-8 lg:flex-row">
-              <div className="lg:max-w-[690px]">
+              <div className="lg:max-w-[690px] py-8">
                 <p className="max-w-[300px] mx-auto font-light uppercase text-center text-xs lg:text-left lg:max-w-full lg:ml-0">
                   mitigate risks, enhance resilience & achieve sustainable
                   security outcomes
@@ -49,9 +61,10 @@ export default function Page() {
                   </Link>
                 </div>
               </div>
-              <div>
+              <div className="lg:grow self-end place-self-center">
                 <Image
                   src="/images/optimas-avatar.png"
+                  className=""
                   alt=""
                   width={600}
                   height={600}
@@ -204,7 +217,7 @@ export default function Page() {
             <div className="absolute bg-primary h-[100px] w-full bottom-0"></div>
             <div className="container mx-auto pt-10 px-2 lg:pt-16 xl:pt-20">
               <div className="max-w-[900px] bg-gray-200 min-h-[500px] mx-auto relative">
-                <div className="bg-secondary-yellow p-3 text-white max-w-[220px] py-6 absolute right-0 lg:-right-[110px]">
+                <div className="bg-secondary-yellow p-3 text-white max-w-[220px] py-6 absolute right-0 xl:-right-[110px]">
                   <p className="text-xs">WORKS</p>
                   <h2 className="text-2xl font-bold lg:text-3xl mt-3 mb-2">
                     Lorem ipsum dolor sit amet.
@@ -236,7 +249,52 @@ export default function Page() {
             <div className="container mx-auto py-16 lg:py-24">
               <SectionTitle title="Latest News & Blogs" subTitle="news" />
               <div className="mt-20 max-w-[1200px] mx-auto">
+                <div className="w-full mb-8 flex-row-reverse gap-8 shadow-2xl rounded-lg hidden xl:flex">
+                  <div className="grow max-w-[550px] w-full">
+                    <Image
+                      src="/images/home/post-1.png"
+                      alt=""
+                      width={400}
+                      height={400}
+                      className="w-full"
+                    />
+                  </div>
+                  <div className="grow p-3 max-w-[600px] flex flex-col py-6">
+                    <h4 className="text-2xl font-bold mb-4">
+                      Future of Learning
+                    </h4>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Magni quam quisquam officiis provident, suscipit quibusdam
+                      quidem delectus totam ex fugit. Lorem ipsum dolor sit amet
+                      consectetur adipisicing elit. Architecto assumenda quidem
+                      magnam. Necessitatibus officia beatae reprehenderit,
+                      perferendis ullam dolores in.
+                    </p>
+                    <div className="mt-10 flex h-full justify-between items-end text-sm">
+                      <p className="text-gray-500">February 20, 2024</p>
+                      <Link
+                        href="/"
+                        className="flex justify-center items-center gap-1 font-bold"
+                      >
+                        Read More <ChevronRight />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
                 <div className="flex flex-wrap justify-center xl:justify-between gap-4 items-center">
+                  <div className="block xl:hidden">
+                    <BlogPost
+                      post={{
+                        date: "February 20, 2024",
+                        image: "/images/home/post-0.png",
+                        link: "",
+                        title: "Future of Learning",
+                        subTitle:
+                          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, non harum. Aliquam facere autem ipsum vitae ratione corrupti dolorum libero.",
+                      }}
+                    />
+                  </div>
                   <BlogPost
                     post={{
                       date: "February 20, 2024",
@@ -272,6 +330,7 @@ export default function Page() {
             </div>
           </section>
           <AskOptimas />
+          <Footer />
         </main>
       )}
     </AnimatePresence>
