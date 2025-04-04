@@ -60,7 +60,7 @@ export default function LandingBanner({ setShowLandingBanner }: Props) {
             alt=""
             width={550}
             height={550}
-            className="max-w-[400px] w-full lg:max-w-[550px]"
+            className="max-w-[400px] w-full xl:max-w-[470px]"
           />
         </motion.div>
       </div>
